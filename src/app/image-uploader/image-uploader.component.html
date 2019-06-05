@@ -1,0 +1,21 @@
+<div class="card mx-auto shadow-sm" style="width: 18rem;">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Upload Image</h5>
+
+    <form [formGroup]="formGroup" novalidate>
+      <input type="file" (change)="onFileChange($event)" accept="image/x-png,image/jpeg" />
+
+      <div class=" d-flex flex-column my-3 flex-md-row">
+          <button type="submit" class="btn btn-primary" (click)="uploadImage()" [disabled]="formGroup.invalid || formGroup.prestine">Upload</button>
+          
+      </div>
+
+    </form>
+
+    <!-- <input type="file" [ngModel]="file" accept="image/x-png,image/jpeg" />
+    <a class="btn btn-primary" [routerLink]="['result']">Upload</a> -->
+  </div>
+</div>

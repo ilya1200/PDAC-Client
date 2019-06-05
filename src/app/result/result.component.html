@@ -1,0 +1,17 @@
+<div class="card mx-auto shadow-sm" style="min-width: 80vw;">
+  <img [src]='image' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Top 5 colors</h5>
+
+    <div *ngFor="let color of colors" class="results">
+      <div class="label">#{{color.colorValue}}</div>
+      <div class="bar-container">
+        <div class="bar" [ngStyle]="{'background-color': '#' + color.colorValue, 'width':color.popularity+'%' }"></div>
+
+      </div>
+      <div class="label">{{ color.popularity | number : '1.2-2'}}%</div>
+    </div>
+
+    <button (click)="back()" class="btn btn-outline-dark btn-lg btn-block">Back</button>
+  </div>
+</div>
